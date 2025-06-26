@@ -5,7 +5,7 @@
 - [] formatting text
 - [] fix used* stats
 - [] fix storage units displaying in bytes
-- [] refresh data on startup
+- [x] refresh data on startup
 
 ## To add:
 
