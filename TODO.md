@@ -16,3 +16,4 @@
 - [] propper packaging and config distribution
 - [] colapsible elements
 - [] the app being faster ;) 
+- [] guided connection to server without the need to modify any .env files
