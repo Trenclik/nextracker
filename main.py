@@ -46,11 +46,17 @@ class NextcloudMonitor():
         }
 
     def pull_metrics(self) -> None:
-        self.request = requests.get(
-            settings.NC_INSTANCE,
-            headers={"OCS-APIRequest": "true"},
-            auth=(settings.NC_USER, settings.NC_PASS)
-        ).json()
+        try:
+            self.request = requests.get(
+                settings.NC_INSTANCE,
+                headers={"OCS-APIRequest": "true"},
+                auth=(settings.NC_USER, settings.NC_PASS)
+            ).json()
+        except requests.exceptions.JSONDecodeError:
+            self.request = requests.get(settings.NC_ROOT).json()
+        except Exception as err:
+            # WIP
+            self.request = {"ocs":{"meta":{"status":f"{err}","message":f"{err}"}}}
         return
 
     def select_data(self) -> Dict[str, Dict[str, Any]]:

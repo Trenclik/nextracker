@@ -31,6 +31,7 @@ enabled_settings = {
 # dotenv shenanigans
 load_dotenv(dotenv_path)
 NC_INSTANCE :str = str(os.environ.get("NC_INSTANCE"))
+NC_ROOT :str = str(os.environ.get("NC_ROOT"))
 NC_PASS :str = str(os.environ.get("NC_PASS"))
 NC_USER :str = str(os.environ.get("NC_USER"))
 
