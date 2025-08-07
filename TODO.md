@@ -17,3 +17,4 @@
 - [] colapsible elements
 - [] the app being faster ;) 
 - [] guided connection to server without the need to modify any .env files
+- [] alert when server goes offline
